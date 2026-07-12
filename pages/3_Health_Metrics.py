@@ -49,6 +49,7 @@ with tab_import:
 
 with tab_trends:
     metric_filter = st.selectbox("Select metric to view", ["All"] + list(db.METRIC_UNITS.keys()), key="trend_metric")
+    #This is Metric Filter
     df = db.get_metrics_df(None if metric_filter == "All" else metric_filter)
 
     if df.empty:
